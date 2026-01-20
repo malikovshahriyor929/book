@@ -1,0 +1,20 @@
+{
+  "name": "banking",
+  "version": "1.0.0",
+  "description": "something",
+  "keywords": [
+    "nodejs",
+    "expressjs"
+  ],
+  "license": "ISC",
+  "author": "shahriyor",
+  "type": "commonjs",
+  "main": "app.js",
+  "scripts": {
+      "start": "node app.js"
+  },
+  "dependencies": {
+    "express": "^5.2.1",
+    "uuid": "^13.0.0"
+  }
+}
