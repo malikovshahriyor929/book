@@ -9,7 +9,6 @@ const app = exress();
 
 app.use(exress.json());
 
-
 app.get("/uuid", (req, res) => {
   const newUuid = uuidv4();
   res.send({ uuid: newUuid });
