@@ -2,13 +2,18 @@ const exress = require("express");
 const mongoose = require("mongoose");
 const dotenv = require("dotenv");
 const postRouter = require("./routes/post.route");
+const authRouter = require("./routes/auth.route")
+const fileUpload = require("express-fileupload");
 dotenv.config();
 
 const app = exress();
 
 app.use(exress.json());
+app.use(exress.static("static"));
+app.use(fileUpload({}));
 
 app.use("/api", postRouter);
+app.use("/api/auth",authRouter)
 
 // app.get("/uuid", );
 

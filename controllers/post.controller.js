@@ -12,8 +12,7 @@ class PostConroller {
   }
   async create(req, res) {
     try {
-      const { title, body } = req.body;
-      const newpost = await postService.create({ title, body });
+      const newpost = await postService.create(req.body, req.files.picture);
       res.status(201).json(newpost);
     } catch (error) {
       res.status(500).json({ error: error.message });
