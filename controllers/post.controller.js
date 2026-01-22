@@ -12,7 +12,11 @@ class PostConroller {
   }
   async create(req, res) {
     try {
-      const newpost = await postService.create(req.body, req.files.picture);
+      const newpost = await postService.create(
+        req.body,
+        req.files.picture,
+        req.user.id,
+      );
       res.status(201).json(newpost);
     } catch (error) {
       res.status(500).json({ error: error.message });
@@ -27,7 +31,7 @@ class PostConroller {
         { title, body },
         { new: true },
       );
-      res.status(201).json(newpost);
+      res.status(200).json(newpost);
     } catch (error) {
       res.status(500).json({ error: error.message });
     }

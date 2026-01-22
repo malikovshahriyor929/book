@@ -4,7 +4,7 @@ const postSchema = new Schema(
   {
     email: { type: String, required: true, unique: true },
     password: { type: String, required: true },
-    isActiveted: { type: Boolean, require: true, default: false },
+    isActiveted: { type: Boolean, required: true, default: false },
   },
   { timestamps: true },
 );
